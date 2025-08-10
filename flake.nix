@@ -34,7 +34,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.bluitcs = import ./nix/users/blutics/home.nix;
+            home-manager.users.blutics = import ./nix/users/blutics/home.nix;
           }
         ];
       };
