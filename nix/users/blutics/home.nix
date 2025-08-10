@@ -51,7 +51,7 @@
     initExtra = ''
       alias ls="eza --icons --group-directories-first -F"
       alias ll="eza -lah --icons --git"
-      alias cdg='sel=$(fd --type d --hidden --exclude .git . | fzf) && [ -n "$sel" ] && cd "$sel"'
+      alias fcd='sel=$(fd --type d --hidden --exclude .git . | fzf) && [ -n "$sel" ] && cd "$sel"'
       alias gd='cd "$(git rev-parse --show-toplevel)"' # git 프로젝트의 루트로 이동
       alias vf='f=$(fd --type f --hidden --exclude .git . | fzf) && [ -n "$f" ] && nvim "$f"'
       alias nrs="sudo nixos-rebuild switch --flake"

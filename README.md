@@ -24,3 +24,11 @@ nix-env -iA nixos.git
 `
 
 이 내용으로 git을 설치하는 bash를 만들면 되는거잖어.
+
+
+--`bash
+
+nix-shell -p git
+# 셸 안에서 git 사용, 종료 시 영향 없음
+# 이 코드 사용하면 간단하게 설치가 될듯?
+` 
