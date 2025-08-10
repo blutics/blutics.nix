@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    inputs.nixos-wsl.nixosModules.wsl
     ./hardware-configuration.nix    # ← 이 줄이 핵심
   ];
   users.users.blutics = {
@@ -23,8 +24,8 @@
   # boot.loader.efi.canTouchEfiVariables = true;
 
   # BIOS(레거시) 부팅이라면 위 두 줄 대신:
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";  # 실제 디스크로 수정
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.device = "/dev/sda";  # 실제 디스크로 수정
 
   # 경고 제거
   system.stateVersion = "24.11";
