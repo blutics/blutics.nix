@@ -21,7 +21,7 @@
     nixosConfigurations = {
       blutics = nixpkgs.lib.nixosSystem {
         inherit system;
-	specialArgs = { inherit inputs; };
+	      specialArgs = { inherit inputs; };
         modules = [
           ./nix/modules/base.nix
           # 필요 시 아래에서 선택

@@ -14,7 +14,15 @@
     fzf bat eza ripgrep fd zoxide
     python311 nodejs unzip
     gnumake gcc
+    rustc cargo
+    nixd
   ];
+
+  programs.git = {
+    enable = true;
+    userName = "Daegun Kim";
+    userEmail = "blutics@gmail.com";
+  };
 
   programs.eza = {
     enable = true;
@@ -55,6 +63,11 @@
     enableZshIntegration = true;
   };
   programs.fzf.enable = true;
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = false;
+  };
 
 }
 

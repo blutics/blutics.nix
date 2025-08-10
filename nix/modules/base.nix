@@ -16,8 +16,6 @@
     export TERM=xterm-256color
     export COLORTERM=truecolor
     eval "$(starship init zsh)"
-    alias ls="eza --icons --group-directories-first -F"
-    alias ll="eza -lah --icons --git"
   '';
 }
 
