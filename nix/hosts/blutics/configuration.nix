@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./hardware-configuration.nix    # ← 이 줄이 핵심
+  ];
   users.users.blutics = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
@@ -12,5 +15,18 @@
 
   # 선언적 사용자 고정까지 원하면
   # users.mutableUsers = false;
+  networking.hostName = "blutics";
+
+  # 하나만 택하세요 (EFI vs BIOS)
+  # EFI 부팅:
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  # BIOS(레거시) 부팅이라면 위 두 줄 대신:
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.device = "/dev/sda";  # 실제 디스크로 수정
+
+  # 경고 제거
+  system.stateVersion = "24.11";
 }
 
