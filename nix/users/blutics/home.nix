@@ -36,19 +36,8 @@ programs.starship = {
     format = "[$user]($style) ";
   };
     add_newline = false;
-    prompt_order = [
-      "username"
-      "hostname"
-      "directory"
-      "git_branch"
-      "git_state"
-      "git_status"
-      "cmd_duration"
-      "line_break"
-      "jobs"
-      "character"
-    ];
-    character = { symbol = "❯"; error_symbol = "✗"; };
+    format = "$username$hostname$directory$git_branch$git_state$git_status$cmd_duration$line_break$jobs$character";
+    character = { success_symbol = "❯"; error_symbol = "✗"; };
   };
 };
 }
