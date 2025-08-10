@@ -19,8 +19,8 @@
 
   # 하나만 택하세요 (EFI vs BIOS)
   # EFI 부팅:
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
 
   # BIOS(레거시) 부팅이라면 위 두 줄 대신:
   # boot.loader.grub.enable = true;
