@@ -17,6 +17,7 @@
   programs.eza = {
     enable = true;
   };
+
   programs.zsh = {
     enable = true;                           # ← 세미콜론
     initExtra = ''
@@ -24,5 +25,24 @@
       alias ll="eza -lah --icons --git"
     '';                                      # ← 닫고 세미콜론
   };
+programs.starship = {
+  enable = true;
+  settings = {
+    add_newline = false;
+    prompt_order = [
+      "username"
+      "hostname"
+      "directory"
+      "git_branch"
+      "git_state"
+      "git_status"
+      "cmd_duration"
+      "line_break"
+      "jobs"
+      "character"
+    ];
+    character = { symbol = "❯"; error_symbol = "✗"; };
+  };
+};
 }
 

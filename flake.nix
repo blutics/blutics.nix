@@ -8,7 +8,7 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } :
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs :
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
@@ -21,6 +21,7 @@
     nixosConfigurations = {
       blutics = nixpkgs.lib.nixosSystem {
         inherit system;
+	specialArgs = { inherit inputs; };
         modules = [
           ./nix/modules/base.nix
           # 필요 시 아래에서 선택
