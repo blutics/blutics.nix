@@ -27,7 +27,14 @@
   };
 programs.starship = {
   enable = true;
+
   settings = {
+    username = {
+    show_always = true;
+    style_user = "bold green";
+    style_root = "bold red";
+    format = "[$user]($style) ";
+  };
     add_newline = false;
     prompt_order = [
       "username"
