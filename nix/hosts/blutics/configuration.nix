@@ -13,6 +13,8 @@
     # 방법 2) 파일로 불러오기(권장: 시크릿 도구와 함께)
     # hashedPasswordFile = "/run/secrets/blutics.pwhash";
   };
+  wsl.enable = true;
+  wsl.defaultUser = "blutics";
 
   # 선언적 사용자 고정까지 원하면
   # users.mutableUsers = false;
