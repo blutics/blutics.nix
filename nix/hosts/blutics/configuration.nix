@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     inputs.nixos-wsl.nixosModules.wsl
@@ -13,6 +13,7 @@
     # 방법 2) 파일로 불러오기(권장: 시크릿 도구와 함께)
     # hashedPasswordFile = "/run/secrets/blutics.pwhash";
   };
+
   wsl.enable = true;
   wsl.defaultUser = "blutics";
 

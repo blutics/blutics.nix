@@ -8,7 +8,7 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, ... } :
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
@@ -19,7 +19,6 @@
     };
 
     nixosConfigurations = {
-      specialArgs = { inherit inputs; };
       blutics = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
