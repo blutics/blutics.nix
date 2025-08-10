@@ -5,8 +5,8 @@
   home.stateVersion = "24.11";
 
   imports = [
-    ./modules/shell.nix
-    ./modules/neovim.nix
+    #./modules/shell.nix
+    #./modules/neovim.nix
   ];
 
   # 사용자 전용 패키지
@@ -16,11 +16,13 @@
 
   programs.eza = {
     enable = true;
-  }
-  programs.zsh.initExtra = ''
-    alias ls="eza --icons --group-directories-first -F"
-    alias ll="eza -lah --icons --git"
-    alias lt="eza -T --icons -L 2"
-  ''
+  };
+  programs.zsh = {
+    enable = true;                           # ← 세미콜론
+    initExtra = ''
+      alias ls="eza --icons --group-directories-first -F"
+      alias ll="eza -lah --icons --git"
+    '';                                      # ← 닫고 세미콜론
+  };
 }
 

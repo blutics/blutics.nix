@@ -26,7 +26,7 @@
           # ./nix/modules/desktop.nix
           # ./nix/modules/server.nix
 
-          ./nix/hosts/blutics/hardware.nix
+          #./nix/hosts/blutics/hardware.nix
           ./nix/hosts/blutics/configuration.nix
 
           # Home Manager 결합
