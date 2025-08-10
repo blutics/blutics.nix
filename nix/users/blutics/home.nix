@@ -16,6 +16,7 @@
     gnumake gcc
     rustc cargo
     nixd
+    yazi lazygit
   ];
 
   programs.git = {
@@ -69,5 +70,10 @@
     nix-direnv.enable = false;
   };
 
+  programs.yazi.enable = true;
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
 }
 
