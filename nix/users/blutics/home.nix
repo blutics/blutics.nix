@@ -11,22 +11,18 @@
 
   # 사용자 전용 패키지
   home.packages = with pkgs; [
-    fzf bat eza ripgrep fd
+    fzf bat eza ripgrep fd zoxide
+    python311 nodejs unzip
+    gnumake gcc
   ];
 
   programs.eza = {
     enable = true;
+    enableZshIntegration = false;
   };
 
-  programs.zsh = {
-    enable = true;                           # ← 세미콜론
-    initExtra = ''
-      alias ls="eza --icons --group-directories-first -F"
-      alias ll="eza -lah --icons --git"
-    '';                                      # ← 닫고 세미콜론
-  };
-programs.starship = {
-  enable = true;
+  programs.starship = {
+    enable = true;
 
   settings = {
     username = {
@@ -40,5 +36,25 @@ programs.starship = {
     character = { success_symbol = "❯"; error_symbol = "✗"; };
   };
 };
+
+  programs.zsh = {
+    enable = true;                           # ← 세미콜론
+    initExtra = ''
+      alias ls="eza --icons --group-directories-first -F"
+      alias ll="eza -lah --icons --git"
+      alias cdg='sel=$(fd --type d --hidden --exclude .git . | fzf) && [ -n "$sel" ] && cd "$sel"'
+      alias gd='cd "$(git rev-parse --show-toplevel)"' # git 프로젝트의 루트로 이동
+      alias vf='f=$(fd --type f --hidden --exclude .git . | fzf) && [ -n "$f" ] && nvim "$f"'
+      alias nrs="sudo nixos-rebuild switch --flake"
+      cd ~
+    '';                                      # ← 닫고 세미콜론
+  };
+  
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+  programs.fzf.enable = true;
+
 }
 
