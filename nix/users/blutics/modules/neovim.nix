@@ -9,5 +9,10 @@
       black isort stylua shfmt prettierd
     ];
   };
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
 }
 
