@@ -22,7 +22,7 @@
     # ./modules/tmux.nix
   ];
 
-  home.file.".tmux.conf".source = ./dotfiles/tmux.conf;
+  # home.file.".tmux.conf".source = ./dotfiles/tmux.conf;
  
 }
 
