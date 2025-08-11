@@ -12,17 +12,13 @@
     rustc cargo
     nixd
     yazi lazygit
-    tmux
     htop
   ]; 
 
   imports = [
     ./modules/shell.nix
     ./modules/neovim.nix
-    # ./modules/tmux.nix
   ];
 
-  # home.file.".tmux.conf".source = ./dotfiles/tmux.conf;
- 
 }
 
