@@ -3,6 +3,10 @@
   programs.zsh = {
     enable = true;                           # ← 세미콜론
     initExtra = ''
+     export TERM=xterm-256color
+      export COLORTERM=truecolor
+      eval "$(starship init zsh)"
+
       alias ls="eza --icons --group-directories-first -F"
       alias ll="eza -lah --icons --git"
       alias fcd='sel=$(fd --type d --hidden --exclude .git . | fzf) && [ -n "$sel" ] && cd "$sel"'
@@ -13,12 +17,7 @@
     '';                                      # ← 닫고 세미콜론
   };  
   # 로그인 쉘 초기화에서 starship 붙이기(전역)
-  environment.interactiveShellInit = ''
-    export TERM=xterm-256color
-    export COLORTERM=truecolor
-    eval "$(starship init zsh)"
-  '';
-
+  
   programs.git = {
     enable = true;
     userName = "Daegun Kim";

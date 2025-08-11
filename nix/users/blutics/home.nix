@@ -6,7 +6,7 @@
 
   # 사용자 전용 패키지
   home.packages = with pkgs; [
-    fzf bat eza ripgrep fd zoxide
+    zsh fzf bat eza ripgrep fd zoxide
     python311 nodejs unzip
     gnumake gcc
     rustc cargo
