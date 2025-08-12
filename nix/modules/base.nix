@@ -8,6 +8,7 @@
     zsh git neovim starship tree
     tmux stow yq jq
     nix-ld
+    btop neofetch ncdu atuin cmatrix
   ];
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;

@@ -17,6 +17,8 @@
        alias gd='cd "$(git rev-parse --show-toplevel)"' # git 프로젝트의 루트로 이동
        alias vf='f=$(fd --type f --hidden --exclude .git . | fzf) && [ -n "$f" ] && nvim "$f"'
        alias nrs="sudo nixos-rebuild switch --flake"
+       alias lg="lazygit"
+       alias yz="yazi"
        cd ~
     ''; # ← 닫고 세미콜론
   };
