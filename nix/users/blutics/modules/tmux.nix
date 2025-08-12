@@ -12,7 +12,7 @@
 
     # nixpkgs에 있는 플러그인만 사용 → 재빌드 때 네트워크 안 탐
     plugins = with pkgs.tmuxPlugins; [
-      sensible
+          sensible
       yank
       resurrect
       {
