@@ -19,7 +19,9 @@
        alias nrs="sudo nixos-rebuild switch --flake"
        alias lg="lazygit"
        alias yz="yazi"
-       cd ~
+       alias cd="z"
+
+       # cd ~
     ''; # ← 닫고 세미콜론
   };
   # 로그인 쉘 초기화에서 starship 붙이기(전역)

@@ -9,6 +9,7 @@
     tmux stow yq jq
     nix-ld
     btop neofetch ncdu atuin cmatrix
+    calcurse
   ];
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;
